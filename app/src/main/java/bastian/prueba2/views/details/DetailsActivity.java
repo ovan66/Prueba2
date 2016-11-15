@@ -21,7 +21,6 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
         long pendingId = getIntent().getLongExtra(PendingListFragment.PENDING_ID,0);
         pending = Pending.findById(Pending.class, pendingId);
         getSupportActionBar().setTitle(pending.getName());

@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements CreateCallback{
         });
     }
 
+
+
+
     private void createPending (String name){
         PendingValidation pendingValidation = new PendingValidation(this);
         pendingValidation.init(name);
@@ -100,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements CreateCallback{
 
     @Override
     public void fail() {
-        Toast.makeText(this, "Agrega un Contacto", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Agrega un pendiente", Toast.LENGTH_SHORT).show();
 
     }
 }

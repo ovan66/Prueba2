@@ -15,8 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_withe_bordered_primary_light"
-        android:hint="Agregue una descripcion o comentario"
+        android:hint="Agregue un pendiente"
         android:lines="5"
         android:padding="8dp" />
+
+    <Switch
+        android:id="@+id/daySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/descriptionEt"
+        android:hint="Dia / noche     " />
 
 </RelativeLayout>

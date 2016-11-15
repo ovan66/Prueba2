@@ -38,6 +38,12 @@ public class PendingsAdapter extends RecyclerView.Adapter<PendingsAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Pending pending = pendings.get(position);
         holder.name.setText(pending.getName());
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.click(pending.getId());
+            }
+        });
 
     }
 

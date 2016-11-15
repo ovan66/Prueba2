@@ -76,7 +76,4 @@ public class PendingListFragment extends Fragment implements PendingListListener
 
     }
 
-    public void search (String name){
-        pendingsAdapter.search(name);
-    }
 }
