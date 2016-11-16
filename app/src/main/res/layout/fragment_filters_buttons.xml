@@ -19,7 +19,7 @@
         android:layout_width="40dp"
         android:layout_height="match_parent"
         android:layout_marginRight="12dp"
-        android:background="@drawable/bg_accent"
+        android:background="@drawable/bg_day_night_button"
         android:src="@mipmap/ic_wb_sunny_white_24dp" />
 
     <ImageButton
@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_marginRight="12dp"
-        android:background="@drawable/bg_accent"
+        android:background="@drawable/bg_day_night_button"
         android:src="@mipmap/ic_brightness_3_white_24dp" />
 
 

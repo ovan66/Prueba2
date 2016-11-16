@@ -5,6 +5,11 @@
     <color name="colorAccent">#039BE5</color>
     <color name="colorAccentDark">#FF034BE5</color>
     <color name="colorWithe">#ffffff</color>
+    <color name="colorPrimaryGray">#112A37</color>
+    <color name="colorYellowPrimary">#f9d443</color>
+
+
+
 
 
 </resources>
