@@ -68,6 +68,14 @@ public class PendingListFragment extends Fragment implements PendingListListener
 
     }
 
+    public void day() {
+        pendingsAdapter.day();
+    }
+
+    public void night() {
+        pendingsAdapter.night();
+    }
+
     @Override
     public void click(long id) {
         Intent intent = new Intent(getActivity(), DetailsActivity.class);

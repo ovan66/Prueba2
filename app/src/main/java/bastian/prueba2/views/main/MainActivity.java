@@ -21,9 +21,10 @@ import android.widget.Toast;
 
 import bastian.prueba2.R;
 import bastian.prueba2.models.Pending;
+import bastian.prueba2.views.main.filter.FiltersButtonsCallback;
 import bastian.prueba2.views.main.pendingList.PendingListFragment;
 
-public class MainActivity extends AppCompatActivity implements CreateCallback{
+public class MainActivity extends AppCompatActivity implements CreateCallback,FiltersButtonsCallback{
 
     private Dialog dialog;
     private PendingListFragment pendingListFragment;
@@ -104,6 +105,18 @@ public class MainActivity extends AppCompatActivity implements CreateCallback{
     @Override
     public void fail() {
         Toast.makeText(this, "Agrega un pendiente", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void day() {
+        pendingListFragment.day();
+
+    }
+
+    @Override
+    public void night() {
+        pendingListFragment.night();
 
     }
 }

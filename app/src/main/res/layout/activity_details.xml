@@ -8,18 +8,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="bastian.prueba2.views.details.DetailsActivity">
+    tools:context="bastian.prueba2.views.details.DetailsActivity"
+    android:background="@color/colorPrimaryDark">
 
     <EditText
+        android:textColorHint="@color/colorWithe"
+        android:textColor="@color/colorWithe"
         android:id="@+id/descriptionEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_withe_bordered_primary_light"
+        android:background="@drawable/bg_dark_blue_bordered_withe"
         android:hint="Agregue un pendiente"
         android:lines="5"
         android:padding="8dp" />
 
     <Switch
+        android:textColorHint="@color/colorWithe"
         android:id="@+id/daySwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

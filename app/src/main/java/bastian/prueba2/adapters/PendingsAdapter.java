@@ -1,10 +1,12 @@
 package bastian.prueba2.adapters;
 
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.List;
@@ -35,9 +37,28 @@ public class PendingsAdapter extends RecyclerView.Adapter<PendingsAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         final Pending pending = pendings.get(position);
         holder.name.setText(pending.getName());
+        CheckBox checkBox = holder.status;
+        checkBox.setChecked(pending.isDone());
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            pending.setDone(true);
+                            pending.save();
+                            pendings.remove(position);
+                            notifyDataSetChanged();
+                        }
+                    }, 100);
+                }
+            }
+        });
+
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,20 +77,24 @@ public class PendingsAdapter extends RecyclerView.Adapter<PendingsAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-    public void search(String name){
-        List<Pending> pendingsList = new PendingsData(). byName(name);
-        pendings.clear();
-        pendings.addAll(pendingsList);
-        notifyDataSetChanged();
-
-    }
     public void reset(){
-        pendings.clear();;
+        pendings.clear();
         List<Pending> pendingList= new PendingsData().notDone();
         pendings.addAll(pendingList);
         notifyDataSetChanged();
     }
 
+    public void day() {
+        pendings.clear();
+        pendings.addAll(new PendingsData().day());
+        notifyDataSetChanged();
+    }
+
+    public void night() {
+        pendings.clear();
+        pendings.addAll(new PendingsData().night());
+        notifyDataSetChanged();
+    }
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -2,12 +2,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item>
-        <color android:color="@android:color/darker_gray"/>
+        <color android:color="@android:color/white"/>
     </item>
 
     <item
         android:bottom="1dp">
-        <color android:color="@android:color/white"></color>
+        <color android:color="@color/colorPrimaryDark"></color>
     </item>
 
 

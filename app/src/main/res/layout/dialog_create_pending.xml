@@ -7,8 +7,10 @@
     android:padding="16dp">
 
     <EditText
+        android:textColorHint="@color/colorWithe"
+        android:textColor="@color/colorWithe"
         android:id="@+id/pendingEt"
-        android:background="@drawable/bg_withe_bordered_primary_light"
+        android:background="@drawable/bg_dark_blue_bordered_withe"
         android:padding="8dp"
         android:singleLine="true"
         android:maxLines="1"
