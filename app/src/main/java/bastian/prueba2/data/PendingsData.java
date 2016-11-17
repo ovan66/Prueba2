@@ -23,7 +23,7 @@ public class PendingsData {
 
     public List<Pending> day() {
         List<Pending> pendings = new ArrayList<>();
-        List<Pending> pendingList = Pending.find(Pending.class, "type = ?", "Dia / noche     ");
+        List<Pending> pendingList = Pending.find(Pending.class,"day = 0" );
         if (pendingList != null && pendingList.size() > 0) {
             pendings.addAll(pendingList);
         }
@@ -32,7 +32,7 @@ public class PendingsData {
 
     public List<Pending> night() {
         List<Pending> pendings = new ArrayList<>();
-        List<Pending> pendingList = Pending.find(Pending.class, "type = ?");
+        List<Pending> pendingList = Pending.find(Pending.class, "day = 1" );
         if (pendingList != null && pendingList.size() > 0) {
             pendings.addAll(pendingList);
         }

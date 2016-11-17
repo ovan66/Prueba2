@@ -46,24 +46,12 @@ public class FiltersButtonsFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final ImageButton dayBtn = (ImageButton) view.findViewById(R.id.dayBtn);
-
-        dayBtn.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                dayBtn.setPressed(true);
-                return true;
-            }
-        });
-
         dayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callback.night();
+                callback.day();
             }
         });
-
-
-
 
         final ImageButton nightBtn = (ImageButton) view.findViewById(R.id.nightBtn);
         dayBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,16 +60,6 @@ public class FiltersButtonsFragment extends Fragment {
                 callback.night();
             }
         });
-
-        dayBtn.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                nightBtn.setPressed(true);
-                return true;
-
-            }
-        });
-
 
     }
 }

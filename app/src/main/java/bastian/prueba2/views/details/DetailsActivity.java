@@ -47,10 +47,10 @@ public class DetailsActivity extends AppCompatActivity {
         pending.setDescription(description);
 
         if (daySwitch.isChecked() == true){
-            Switch daySwitch = (Switch) findViewById(R.id.daySwitch);
             pending.setDay(true);
+        }else{
+            pending.setDay(false);
         }
-
         pending.save();
         super.onPause();
     }
